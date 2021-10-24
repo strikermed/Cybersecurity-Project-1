@@ -121,6 +121,9 @@ cd /etc/ansible && nano ansible.cfg
 ```
 ansible-playbook webservers_DVWA_playbook.yml
 ```
+You should see something like this:
+![DVWA Confirmed](Images/DVWA_confirm.png)
+
 - Run the playbook: elk_playbook.yml and navigate to http://104.42.50.35:5601/app/kibana (use your specified public IP) to check that the installation worked as expected
 ```
 ansible-playbook elk_playbook.yml
@@ -132,7 +135,7 @@ You should see something something like this:
 ```
 ansible-playbook elk_filebeat_playbook.yml
 ```
-You see something like this:
+You should see something like this:
 ![Filebeat Confirm](Images/Filebeat_data_confirm.png)
 
 - Run the Playbook: elk_metricbeat_playbook.yml, then navigate to http://104.42.50.35:5601/app/kibana#/home/tutorial/dockerMetrics (use your specified public IP), and select "Check data" at the bottom of the page to confirm the installation worked as expected
