@@ -8,7 +8,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
 
   - [ansible.cfg](https://github.com/strikermed/cybersecurity-Project-1/blob/main/Ansible/ansible.cfg)
   - [hosts](https://github.com/strikermed/cybersecurity-Project-1/blob/main/Ansible/hosts)
-  - [webservers_DVWA_playbook.yml] (https://github.com/strikermed/cybersecurity-Project-1/blob/main/Ansible/webservers_DVWA_playbook.yml)
+  - [webservers_DVWA_playbook.yml](https://github.com/strikermed/cybersecurity-Project-1/blob/main/Ansible/webservers_DVWA_playbook.yml)
   - [elk_playbook](https://github.com/strikermed/cybersecurity-Project-1/blob/main/Ansible/elk_playbook.yml)
   - [elk_filebeat_playbook.yml](https://github.com/strikermed/cybersecurity-Project-1/blob/main/Ansible/elk_filebeat_playbook.yml)
   - [filebeat-config.yml](https://github.com/strikermed/cybersecurity-Project-1/blob/main/Ansible/filebeat-config.yml)
@@ -125,14 +125,21 @@ ansible-playbook webservers_DVWA_playbook.yml
 ```
 ansible-playbook elk_playbook.yml
 ```
+You should see something something like this:
+![Kibana Confrimed](Images/Kibana.png)
+
 - Run the Playbook: elk_filebeat_playbook.yml, then navigate to http://104.42.50.35:5601/app/kibana#/home/tutorial/systemLogs (use your specified public IP), and select "Check data" at the bottom of the page to confirm the installation worked as expected
 ```
 ansible-playbook elk_filebeat_playbook.yml
 ```
+You see something like this:
+![Filebeat Confirm](Images/Filebeat_data_confirm.png)
+
 - Run the Playbook: elk_metricbeat_playbook.yml, then navigate to http://104.42.50.35:5601/app/kibana#/home/tutorial/dockerMetrics (use your specified public IP), and select "Check data" at the bottom of the page to confirm the installation worked as expected
 ```
 ansible-playbook elk_metricbeat_playbook.yml
 ```
-
+You should see something like this:
+![metricbeat confirm](Images/metricbeat_data_confirm.png)
 This should now allow you to monitor your 2 DVWA web servers via Kibana.
 Happy Logging!
