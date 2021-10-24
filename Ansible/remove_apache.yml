@@ -1,0 +1,10 @@
+---
+  - name: test
+    hosts: webservers
+    become: true
+    tasks:
+
+    - name: uninstall apache2
+      apt:
+       name: apache2
+       state: absent
