@@ -74,7 +74,7 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 - allows for configuration changes at mass
 
 The playbook implements the following tasks:
-- Install Docker.io_TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
+- Install Docker.io_
 - Install Python3-pip
 - Install pip docker module
 - Run commands to increase virtual memory to 262144 in current status and upon restart
@@ -109,11 +109,11 @@ cd /etc/ansible && curl -O https://github.com/strikermed/cybersecurity-Project-1
 ```
 cd /etc/ansible && mkdir roles && cd /etc/ansible/roles && curl -O https://github.com/strikermed/cybersecurity-Project-1/blob/main/Ansible/filebeat-config.yml -O metricbeat-config.yml
 ```
-- Update the "hosts" file (Located /etc/ansible).  Locate "[webservers]" and include the IP addresses of your webservers.  Next and add a group labeled "[ELK]" and add the IP address for this server
+- Update the "hosts" file (Located /etc/ansible).  Locate "[webservers]" and include the IP addresses of your webservers.  Next add a group labeled "[ELK]" and add the IP address for this server
 ```
 cd /etc/ansible && nano hosts
 ```
-- Update the ansible.cfg, look for "remote_user =" and insert the username with elevated privileges.  
+- Update the ansible.cfg, look for "remote_user=" and insert the username with elevated privileges.  
 ```
 cd /etc/ansible && nano ansible.cfg
 ```
@@ -121,28 +121,28 @@ cd /etc/ansible && nano ansible.cfg
 ```
 ansible-playbook webservers_DVWA_playbook.yml
 ```
-You should see something like this:
+You should see something like this when checking the installation above:
 ![DVWA Confirmed](Images/DVWA_confirm.png)
 
 - Run the playbook: elk_playbook.yml and navigate to http://104.42.50.35:5601/app/kibana (use your specified public IP) to check that the installation worked as expected
 ```
 ansible-playbook elk_playbook.yml
 ```
-You should see something something like this:
+You should see something something like this when checking the installation above:
 ![Kibana Confrimed](Images/Kibana.png)
 
 - Run the Playbook: elk_filebeat_playbook.yml, then navigate to http://104.42.50.35:5601/app/kibana#/home/tutorial/systemLogs (use your specified public IP), and select "Check data" at the bottom of the page to confirm the installation worked as expected
 ```
 ansible-playbook elk_filebeat_playbook.yml
 ```
-You should see something like this:
+You should see something like this when confirming installation above:
 ![Filebeat Confirm](Images/Filebeat_data_confirm.png)
 
 - Run the Playbook: elk_metricbeat_playbook.yml, then navigate to http://104.42.50.35:5601/app/kibana#/home/tutorial/dockerMetrics (use your specified public IP), and select "Check data" at the bottom of the page to confirm the installation worked as expected
 ```
 ansible-playbook elk_metricbeat_playbook.yml
 ```
-You should see something like this:
+You should see something like this when confirming installation above:
 ![metricbeat confirm](Images/metricbeat_data_confirm.png)
 This should now allow you to monitor your 2 DVWA web servers via Kibana.
 Happy Logging!
