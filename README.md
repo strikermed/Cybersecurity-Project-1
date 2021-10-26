@@ -28,12 +28,12 @@ This document contains the following details:
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
-Load balancing ensures that the application will be highly availabe, in addition to restricting access to the network.
+Load balancing ensures that the application will be highly available, in addition to restricting access to the network.
 - Load balancers protect the A in the CIA triad, Availability.  They do this by balancing traffic between web servers to ensure that neither is overloaded with traffic like what you would see from a DDOS attack.
-- Jump box implementations shrink your attack surface and through utilizing an ansible container create a multi layer security profile which is protected via seperate ssh keys. For Example: You can remotely SSH into the jumpbox with your own ssh key, but you cannot use that same key to access the web servers.  In addition, the jump box also cannot access the web servers, a seperate docker container (ansible) only has access to the web servers via its own ssh key.
+- Jump box implementations shrink your attack surface and through utilizing an ansible container create a multi layer security profile which is protected via separate ssh keys. For Example: You can remotely SSH into the jumpbox with your own ssh key, but you cannot use that same key to access the web servers.  In addition, the jump box also cannot access the web servers, a separate docker container (ansible) only has access to the web servers via its own ssh key.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the system logs and metrics.
-- Filbeat monitors for changes to files, like the systemlog, and forwards that log data to either Elasticsearch or Logstash.
+- filebeat monitors for changes to files, like the systemlog, and forwards that log data to either Elasticsearch or Logstash.
 - Metricbeat collects information on the operating system and services running on the system it's installed on.
 
 The configuration details of each machine may be found below.
