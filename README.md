@@ -107,7 +107,7 @@ cd /etc/ansible && curl -O https://github.com/strikermed/cybersecurity-Project-1
 ```
 - Copy the filebeat-config.yml and metricbeat-config.yml to "/etc/ansible/roles"
 ```
-cd /etc/ansible && mkdir roles && cd /etc/ansible/roles && curl -O https://github.com/strikermed/cybersecurity-Project-1/blob/main/Ansible/filebeat-config.yml -O metricbeat-config.yml
+cd /etc/ansible && mkdir roles && cd /etc/ansible/roles && curl -O https://github.com/strikermed/cybersecurity-Project-1/blob/main/Ansible/filebeat-config.yml -O https://github.com/strikermed/cybersecurity-Project-1/blob/main/Ansible/metricbeat-config.yml
 ```
 - Update the "hosts" file (Located /etc/ansible).  Locate "[webservers]" and include the IP addresses of your webservers.  Next add a group labeled "[ELK]" and add the IP address for this server
 ```
